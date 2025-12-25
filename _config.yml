@@ -1,0 +1,23 @@
+title: Site title
+email: serenadantingchen@gmail.com
+description: >- 
+  Here's the description
+baseurl: "" 
+url: ""
+
+theme-color: white
+
+# Build settings
+markdown: kramdown
+sass:
+  sass_dir: _sass
+  style: compressed
+permalink: /:categories/:title/
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"

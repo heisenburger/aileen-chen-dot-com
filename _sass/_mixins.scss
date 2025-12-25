@@ -1,0 +1,92 @@
+// ==================
+// Mixins & functions
+// ==================
+
+// Detect dark mode
+@mixin dark() {
+  @media only screen and (prefers-color-scheme: dark) {
+    @content
+  }
+}
+
+// Detect prefers-reduced-motion
+@mixin reducemotion() {
+  @media only screen and (prefers-reduced-motion) {
+    @content
+  }
+}
+
+// Mobile-first media queries
+@mixin query($breakpoint, $type: 'width') { // defaults to screen width detection
+  @if $type == 'height' {
+    @media (min-height: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+// Desktop-first media queries
+@mixin query-down($breakpoint, $type: 'width') { // defaults to screen width detection
+  @if $type == 'height' {
+    @media (max-height: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+// Transition
+@mixin transit($property: all, $duration: 100ms, $timing: ease-out) {
+  transition: $property $duration $timing;
+  @include reducemotion {
+    transition: none;
+  }
+}
+
+// ------
+// Resets
+// ------
+
+@mixin reset-button() {
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+@mixin reset-input() {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+@mixin reset-fieldset() {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+// -----------------
+// Reusable snippets
+// -----------------
+
+// Pseudo elements
+@mixin pseudo {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+// Reset origin
+@mixin anchor-position {
+  position: relative;
+}

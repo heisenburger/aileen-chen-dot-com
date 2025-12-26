@@ -1,3 +1,6 @@
-# Static template
-This is my personal file template for static Jekyll builds.
+# Aileen's business card website
 
+Todos
+- [ ] Set up Jekyll project
+- [ ] Create image space
+- [ ] Create text space

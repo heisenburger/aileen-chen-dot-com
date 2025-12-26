@@ -1,0 +1,23 @@
+@use "mixins" as *;
+@use "vars" as *;
+
+main {
+  font-family: var(--ff-mono);
+  font-size: var(--12);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: var(--12);
+  font-family: var(--ff-sans);
+}
+
+#services {
+  list-style: none;
+}
+
+.sans {
+  font-family: var(--ff-sans);
+}

@@ -65,7 +65,7 @@
 
   .grid-child {
     width: 100%;
-    @include query-down($bp-sml){
+    @include query($bp-sml, 'down'){
       margin: var(--20) 0;
     }
   }

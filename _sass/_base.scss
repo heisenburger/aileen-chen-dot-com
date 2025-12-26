@@ -72,23 +72,4 @@ img {
   max-width: 100%;
   vertical-align: middle;
   color: transparent;
-  @include dark {
-    filter: contrast(0.8);
-  }
 }
-
-// Figure
-
-figure {
-  break-inside: avoid;
-  & > img {
-    display: block;
-    margin: 0 auto;
-  }
-  figcaption {
-    font-size: var(--f-sml);
-    max-width: 100%;
-    margin-top: 1em;
-  }
-}
-

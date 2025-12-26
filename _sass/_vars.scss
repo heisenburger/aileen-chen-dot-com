@@ -10,6 +10,8 @@
 
 // Breakpoints
 
+  $bp: 680px;
+
   $bp-sml: 340px;
   $bp-med: 680px;
   $bp-lrg: 960px;
@@ -46,32 +48,25 @@
 // Colours
 // -------
 
-// Raw values
-
-// Semantic values
-
   :root {
     --fg: black;
     --bg: white;
     --ac: blue; // accent colour
     --fc: yellow; // focus colour
-  }
+    --grey: #FAFAFA;
 
-  @include dark { :root {
-    --fg: white;
-    --bg: black;
-    --ac: lightblue; // accent colour
-    --fc: yellow; // focus colour
-  }}
+    // shadows
+
+    --drop: 0 0 3px hsl(0 0 0 / 7%), 2px 3px 9px hsl(0 0 33 / 4%);
+  }
 
 // ----------
 // Typography
 // ----------
 
 // Font families
-
   :root {
-    --ff-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Helvetica", 
-      "Arial", "Roboto", "Ubuntu", "Segoe UI", "Fira Sans", "Droid Sans", sans-serif;
+    --ff-sans: "Helvetica", "Helvetica Neue", "Inter", "Arial", sans-serif;
+    --ff-mono: "Sono", "Courier Prime Sans", "Roboto Mono", monospace;
     --ff-serif: "New York", "Adobe Garamond Pro", "Adobe Garamond", "EB Garamond", Garamond, serif;
   }

@@ -1,0 +1,68 @@
+@use "mixins" as *;
+@use "vars" as *;
+
+main {
+  --mobile-max-height: 66dvh;
+  --mobile-padding: var(--24);
+}
+
+// =====================
+// Sample images gallery
+// =====================
+
+#samples {
+  width: 100dvw;
+  height: var(--mobile-max-height);
+  @include query($bp) {
+    height: 100dvh;
+  }
+  @include center-all;
+}
+
+  div.imgspace {
+    width: 100%;
+    height: 100%;
+    @include query($bp) {
+      width: fit-content;
+      height: fit-content;
+    }
+    // border
+    background-color: var(--grey);
+    padding: var(--mobile-padding);  
+    @include query($bp) {
+      padding-top: var(--28);
+      padding-bottom: var(--72);
+      padding-left: var(--48);
+      padding-right: var(--48);
+      transform: translateY(-2dvh);
+    }
+    // drop shadow
+    box-shadow: var(--drop);
+
+    @include center-all;
+  }
+  
+    img.sample_img {
+      --vw-minus-padding: calc(100dvw - 2*(var(--mobile-padding)));
+      --vh-minus-padding: calc(100dvh - 2*(var(--mobile-padding)));
+      max-width: var(--vw-minus-padding);
+      max-height: min(var(--vh-minus-padding),calc(var(--mobile-max-height) - 2*(var(--mobile-padding))));
+      @include query($bp) {
+        max-width: 50dvw;
+        max-height: 75dvh;
+      }
+      margin: auto;
+    }
+
+// ====
+// Text
+// ====
+
+#text {
+  width: 100dvw;
+  padding: var(--mobile-padding);
+  @include query($bp) {
+    position: absolute;
+    bottom: 0;
+  }
+}

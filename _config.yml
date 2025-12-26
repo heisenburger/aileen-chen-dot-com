@@ -1,11 +1,13 @@
-title: Site title
-email: serenadantingchen@gmail.com
+title: Aileen Chen
+email: hiaileenchen@gmail.com
 description: >- 
-  Here's the description
-baseurl: "" 
-url: ""
+  Aileen Chen is a photographer and stylist based in Aotearoa, New Zealand.  
+url: aileen-chen.com
 
 theme-color: white
+
+collections:
+  - samples
 
 # Build settings
 markdown: kramdown

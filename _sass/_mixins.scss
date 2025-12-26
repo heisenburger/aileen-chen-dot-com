@@ -2,13 +2,6 @@
 // Mixins & functions
 // ==================
 
-// Detect dark mode
-@mixin dark() {
-  @media only screen and (prefers-color-scheme: dark) {
-    @content
-  }
-}
-
 // Detect prefers-reduced-motion
 @mixin reducemotion() {
   @media only screen and (prefers-reduced-motion) {
@@ -16,28 +9,29 @@
   }
 }
 
-// Mobile-first media queries
-@mixin query($breakpoint, $type: 'width') { // defaults to screen width detection
+// Media queries
+// defaults to screen width detection, mobile first
+@mixin query($breakpoint, $type: 'width', $direction: 'up') {
   @if $type == 'height' {
-    @media (min-height: $breakpoint) {
-      @content;
+    @if $direction == 'down' {
+      @media (max-height: $breakpoint) {
+        @content;
+      }
+    } @else {
+      @media (min-height: $breakpoint) {
+        @content;
+      }
     }
+    
   } @else {
-    @media (min-width: $breakpoint) {
-      @content;
-    }
-  }
-}
-
-// Desktop-first media queries
-@mixin query-down($breakpoint, $type: 'width') { // defaults to screen width detection
-  @if $type == 'height' {
-    @media (max-height: $breakpoint) {
-      @content;
-    }
-  } @else {
-    @media (max-width: $breakpoint) {
-      @content;
+    @if $direction == 'down' { 
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    } @else {
+      @media (min-width: $breakpoint) {
+        @content;
+      }
     }
   }
 }
@@ -89,4 +83,10 @@
 // Reset origin
 @mixin anchor-position {
   position: relative;
+}
+
+// Fast center
+@mixin center-all {
+  display: grid;
+  place-items: center;
 }

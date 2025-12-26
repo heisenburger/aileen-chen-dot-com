@@ -5,7 +5,7 @@ main {
   font-family: var(--ff-mono);
   font-size: var(--12);
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
 }
 
 @supports (mix-blend-mode: difference) {
@@ -13,34 +13,50 @@ main {
     color: white;
     mix-blend-mode: difference;
   }
-}
 
-h1 {
-  font-size: var(--12);
-  font-family: var(--ff-sans);
+  a:hover {
+    color: var(--fc);
+  }
+
+  ::selection {
+    background: var(--ac);
+    mix-blend-mode: none;
+  }
 }
 
 #services, #links {
   list-style: none;
 }
 
+header {
+  letter-spacing: 0.3em;
+}
+
+  h1 {
+    font-size: var(--12);
+    font-family: var(--ff-sans);
+  }
+
   #services {
     font-weight: 500;
   }
 
-  #links {
-    font-weight: 300;
-  }
+#links {
+  font-size: var(--10);
+  font-weight: 300;
+}
 
 footer {
-  font-weight: 400;
+  font-weight: 500;
+  font-size: var(--10);
   @include query($bp) {
     text-align: right;
   }
 }
 
-.sans {
-  font-family: var(--ff-sans);
-  font-weight: 500;
-  font-size: var(--11);
-}
+  strong.email {
+    font-weight: 600;
+  }
+  span.sans {
+    font-family: var(--ff-sans);
+  }

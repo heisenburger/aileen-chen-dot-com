@@ -1,6 +1,8 @@
 # Aileen's business card website
 
 Todos
-- [ ] Set up Jekyll project
-- [ ] Create image space
-- [ ] Create text space
+- [x] Set up Jekyll project
+- [x] Create image space
+- [x] Create text space
+- [ ] Make images slideshow
+- [ ] (opt) copy email address

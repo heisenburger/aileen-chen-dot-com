@@ -38,10 +38,17 @@ body {
 }
 
 a {
-  color: var(--ac);
+  color: inherit;
+  text-decoration: none;
+  // text-underline-offset: 0.25em;
+  // text-decoration-thickness: 0.5px;
   @include transit();
+  &::before {
+    content: '↗︎';
+    font-family: 'Inter', sans-serif;
+  }
   &:hover {
-    color: var(--fg);
+    color: var(--ac);
     @include transit();
   }
 }

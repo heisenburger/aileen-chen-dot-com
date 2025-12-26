@@ -6,6 +6,14 @@ main {
   --mobile-padding: var(--24);
 }
 
+@mixin wonk {
+  transform: rotate(-0.5deg);
+}
+
+#samples, #text {
+  @include wonk;
+}
+
 // =====================
 // Sample images gallery
 // =====================
@@ -13,7 +21,7 @@ main {
 #samples {
   width: 100dvw;
   height: var(--mobile-max-height);
-  @include query($bp) {
+  @include query($bp){
     height: 100dvh;
   }
   @include center-all;
@@ -22,14 +30,14 @@ main {
   div.imgspace {
     width: 100%;
     height: 100%;
-    @include query($bp) {
+    @include query($bp){
       width: fit-content;
       height: fit-content;
     }
     // border
     background-color: var(--grey);
     padding: var(--mobile-padding);  
-    @include query($bp) {
+    @include query($bp){
       padding-top: var(--28);
       padding-bottom: var(--72);
       padding-left: var(--48);
@@ -41,28 +49,86 @@ main {
 
     @include center-all;
   }
+
+    div.imgwrap {
+      position: relative;
+      &::after {
+        content: '';
+        inset: 0;
+        position: absolute;
+        mix-blend-mode: multiply;
+        box-shadow: inset 2px 2px 1vmin hsl(0 0 0 / 3%);
+      }
+    }
   
     img.sample_img {
       --vw-minus-padding: calc(100dvw - 2*(var(--mobile-padding)));
       --vh-minus-padding: calc(100dvh - 2*(var(--mobile-padding)));
       max-width: var(--vw-minus-padding);
       max-height: min(var(--vh-minus-padding),calc(var(--mobile-max-height) - 2*(var(--mobile-padding))));
-      @include query($bp) {
+      @include query($bp){
         max-width: 50dvw;
         max-height: 75dvh;
       }
-      margin: auto;
     }
 
 // ====
 // Text
 // ====
 
-#text {
-  width: 100dvw;
-  padding: var(--mobile-padding);
-  @include query($bp) {
-    position: absolute;
-    bottom: 0;
+@mixin flexy {
+  display: flex;
+  flex-direction: column;
+  @include query($bp){
+    flex-direction: row;
   }
 }
+
+#text {
+  width: 100dvw;
+  max-width: 133dvh;
+  margin: auto;
+  height: auto;
+  padding: var(--mobile-padding);
+  @include flexy;
+  gap: var(--20);
+  @include query($bp){
+    position: absolute;
+    bottom: 0;
+    justify-content: space-between;
+    height: 25dvh;
+    padding: var(--48);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+  header {
+    @include flexy;
+    @include query($bp){
+      gap: var(--20);
+    }
+  }
+
+  @include query($bp, 'down') {
+    #services {
+      margin: var(--10);
+    }
+  }
+
+  #links {
+    @include query($bp, 'down') {
+      align-self: flex-end;
+    }
+    @include query($bp){
+      order: 3;
+      align-self: center;
+    }
+  }
+
+  footer {
+    @include query($bp){
+      align-self: flex-end;
+    }
+  }

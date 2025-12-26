@@ -6,7 +6,13 @@ main {
   font-size: var(--12);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  font-weight: 500;
+}
+
+@supports (mix-blend-mode: difference) {
+  #text {
+    color: white;
+    mix-blend-mode: difference;
+  }
 }
 
 h1 {
@@ -14,10 +20,27 @@ h1 {
   font-family: var(--ff-sans);
 }
 
-#services {
+#services, #links {
   list-style: none;
+}
+
+  #services {
+    font-weight: 500;
+  }
+
+  #links {
+    font-weight: 300;
+  }
+
+footer {
+  font-weight: 400;
+  @include query($bp) {
+    text-align: right;
+  }
 }
 
 .sans {
   font-family: var(--ff-sans);
+  font-weight: 500;
+  font-size: var(--11);
 }

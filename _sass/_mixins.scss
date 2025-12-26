@@ -11,7 +11,7 @@
 
 // Media queries
 // defaults to screen width detection, mobile first
-@mixin query($breakpoint, $type: 'width', $direction: 'up') {
+@mixin query($breakpoint, $direction: 'up', $type: 'width') {
   @if $type == 'height' {
     @if $direction == 'down' {
       @media (max-height: $breakpoint) {

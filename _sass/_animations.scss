@@ -1,25 +1,36 @@
-// -------
-// Fade in
-// -------
+// -------------
+// Img slideshow
+// -------------
 
-@keyframes fade-in {
-  0% {
-      opacity: 0;
-  }
-  100% {
-      opacity: 1;
-  }
+#samples {
+  --number-of-imgs: 8;
+  --seconds-per-img: 8s;
 }
 
-// -----------------
-// Enter from bottom
-// -----------------
+  div.imgspace {
+    position: absolute;
+    opacity: 0;
+    animation: slide calc(var(--number-of-imgs) * var(--seconds-per-img)) infinite;
+  }
 
-@keyframes enter-bottom {
-  0% {
-      transform: translateY(2em);
-  }
-  100% {
-      transform: translateY(0px);
-  }
+  div.imgspace:nth-child(1) { animation-delay: calc((1 - 1) * var(--seconds-per-img)); }
+  div.imgspace:nth-child(2) { animation-delay: calc((2 - 1) * var(--seconds-per-img)); }
+  div.imgspace:nth-child(3) { animation-delay: calc((3 - 1) * var(--seconds-per-img)); }
+  div.imgspace:nth-child(4) { animation-delay: calc((4 - 1) * var(--seconds-per-img)); }
+  div.imgspace:nth-child(5) { animation-delay: calc((5 - 1) * var(--seconds-per-img)); }
+  div.imgspace:nth-child(6) { animation-delay: calc((6 - 1) * var(--seconds-per-img)); }
+  div.imgspace:nth-child(7) { animation-delay: calc((7 - 1) * var(--seconds-per-img)); }
+  div.imgspace:nth-child(8) { animation-delay: calc((8 - 1) * var(--seconds-per-img)); }
+
+@keyframes slide {
+  // start invisible
+  0% { opacity: 0; animation-timing-function: ease-in; }
+  // fade in
+  1% { opacity: 1; }
+  // remain visible
+  12.5% { opacity: 1; animation-timing-function: ease-out; }
+  // fade out
+  13% { opacity: 0; }
+  // end invisible
+  100% { opacity: 0; }
 }

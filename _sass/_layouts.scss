@@ -4,6 +4,7 @@
 main {
   --mobile-max-height: 66dvh;
   --mobile-padding: var(--24);
+  position: relative;
 }
 
 @mixin wonk {
@@ -25,11 +26,14 @@ main {
     height: 100dvh;
   }
   @include center-all;
+  position: relative;
+  z-index: 0;
 }
 
-  div.imgspace {
+  div.imgspace { // this is what we are animating
     width: 100%;
     height: 100%;
+    // fit content in desktop mode
     @include query($bp){
       width: fit-content;
       height: fit-content;
@@ -47,6 +51,7 @@ main {
     // drop shadow
     box-shadow: var(--drop);
 
+    // center children elements within
     @include center-all;
   }
 
@@ -57,7 +62,7 @@ main {
         inset: 0;
         position: absolute;
         mix-blend-mode: multiply;
-        box-shadow: inset 2px 2px 1vmin hsl(0 0 0 / 3%);
+        box-shadow: inset 2px 2px 1vmin hsl(0 0% 0% / 3%);
       }
     }
   
@@ -105,6 +110,7 @@ main {
     right: 0;
     margin: 0 auto;
   }
+  z-index: 1; // make sure text is on top of imgs
 }
 
   header {

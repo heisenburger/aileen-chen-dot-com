@@ -51,7 +51,27 @@ footer {
   }
 }
 
-  strong.email {
+  #copyEmail {
+    text-align: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    font-size: inherit;
+    font-family: inherit;
+  }
+
+  #copyConfirmation {
+    color: var(--ac);
+    background-color: var(--fc);
+    @supports (mix-blend-mode: difference) {
+      color: var(--fc);
+      background-color: var(--ac);
+    }
+    font-size: var(--14);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+  }
+
+  #email {
     font-weight: 600;
     letter-spacing: 0.5em;
   }

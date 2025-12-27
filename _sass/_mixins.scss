@@ -90,3 +90,10 @@
   display: grid;
   place-items: center;
 }
+
+// Underline styling
+@mixin underline {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 0.5px;
+}

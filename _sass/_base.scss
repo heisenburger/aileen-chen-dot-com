@@ -40,9 +40,8 @@ body {
 
 a {
   color: inherit;
-  text-underline-offset: 0.25em;
-  text-decoration-thickness: 0.5px;
-  @include transit();
+  @include underline;
+  @include transit;
   &:hover {
     cursor: url('/img/flower2.png'), auto;
   }

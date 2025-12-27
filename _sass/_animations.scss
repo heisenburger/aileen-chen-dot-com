@@ -4,7 +4,7 @@
 
 #samples {
   --number-of-imgs: 8;
-  --seconds-per-img: 8s;
+  --seconds-per-img: 3s;
 }
 
   div.imgspace {
@@ -26,11 +26,11 @@
   // start invisible
   0% { opacity: 0; animation-timing-function: ease-in; }
   // fade in
-  1% { opacity: 1; }
+  0.1% { opacity: 1; }
   // remain visible
   12.5% { opacity: 1; animation-timing-function: ease-out; }
   // fade out
-  13% { opacity: 0; }
+  18.75% { opacity: 0; }
   // end invisible
   100% { opacity: 0; }
 }

@@ -55,6 +55,15 @@ main {
     @include center-all;
   }
 
+  div.imgspace:nth-child(1) { transform: rotate(0.8deg); }
+  div.imgspace:nth-child(2) { transform: rotate(-0.5deg); }
+  div.imgspace:nth-child(3) { transform: rotate(0.6deg); }
+  div.imgspace:nth-child(4) { transform: rotate(-0.4deg); }
+  div.imgspace:nth-child(5) { transform: rotate(0.9deg); }
+  div.imgspace:nth-child(6) { transform: rotate(-0.4deg); }
+  div.imgspace:nth-child(7) { transform: rotate(0.3deg); }
+  div.imgspace:nth-child(8) { transform: rotate(-0.5deg); }
+
     div.imgwrap {
       position: relative;
       &::after {
@@ -144,6 +153,14 @@ main {
     @include query($bp){
       order: 3;
       align-self: center;
+    }
+    a {
+      display: inline-block;
+      min-height: var(--28);
+      line-height: var(--28);
+      &:hover {
+        font-weight: 600;
+      }
     }
   }
 

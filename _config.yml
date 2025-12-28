@@ -10,9 +10,6 @@ baseurl: /aileen-chen-dot-com
 
 theme-color: white
 
-collections:
-  - samples
-
 # Build settings
 markdown: kramdown
 sass:

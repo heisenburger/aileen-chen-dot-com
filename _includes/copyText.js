@@ -1,6 +1,7 @@
 async function copyText() {
   const copyButton = document.getElementById("copyEmail");
   const textContent = document.getElementById("email").textContent; // Get the text content to copy
+  const confirmationMessage = "Email copied to clipboard";
 
   try {
     await navigator.clipboard.writeText(textContent);
@@ -8,12 +9,14 @@ async function copyText() {
     // Show a success message
     const message = document.getElementById("copyConfirmation");
     copyButton.classList.toggle("hideText");
+    message.textContent = confirmationMessage;
     message.style.display = "block";
 
     // Hide the message after 2 seconds
     setTimeout(() => {
       copyButton.classList.toggle("hideText");
       message.style.display = "none";
+      message.textContent = "";
     }, 2000);
 
   } catch (err) {

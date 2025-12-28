@@ -8,17 +8,17 @@ main {
   letter-spacing: 0.25em;
 }
 
-@supports (mix-blend-mode: difference) {
-  #text {
-    color: white;
-    mix-blend-mode: difference;
-  }
+// @supports (mix-blend-mode: difference) {
+//   #text {
+//     color: white;
+//     mix-blend-mode: difference;
+//   }
 
-  ::selection {
-    background: var(--ac);
-    mix-blend-mode: none;
-  }
-}
+//   ::selection {
+//     background: var(--ac);
+//     mix-blend-mode: none;
+//   }
+// }
 
 #services, #links {
   list-style: none;

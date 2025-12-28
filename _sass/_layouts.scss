@@ -193,11 +193,11 @@ main {
         padding: var(--12) var(--16) var(--20);
         top: calc(-1 * var(--16));
         left: calc(-1 * var(--16));
-        outline: 1px solid var(--fg);
         border-radius: 100%;
-        @supports (mix-blend-mode: difference) {
-          outline: 1px solid white;
-        }
+        outline: 1px solid var(--fg);
+        // @supports (mix-blend-mode: difference) {
+        //   outline: 1px solid white;
+        // }
       }
     }
 

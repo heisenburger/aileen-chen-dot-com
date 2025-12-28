@@ -128,7 +128,7 @@ main {
       gap: var(--20);
     }
 
-    @include query($bp){
+    @include query($bp2){
       h1::after {
         content: '●';
         margin-left: var(--20);
@@ -160,12 +160,21 @@ main {
       line-height: var(--28);
       &:hover {
         font-weight: 600;
+        cursor: url('/img/tri_blue.png'), auto;
+        &::after {
+          content: '↗︎';
+          position: absolute;
+          font-size: var(--16);
+          font-weight: 400;
+          font-family: sans-serif;
+        }
       }
     }
   }
 
   footer {
     position: relative;
+    width: fit-content;
     @include query($bp){
       align-self: flex-end;
     }
@@ -173,24 +182,36 @@ main {
 
     button#copyEmail {
       @include reset-button;
-      cursor: url('/img/flower2.png'), auto;
+      cursor: url('/img/tri_blue.png'), auto;
       padding: var(--10);
-      &:hover {
+      position: relative;
+      &:hover::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: var(--12) var(--16) var(--20);
+        top: calc(-1 * var(--16));
+        left: calc(-1 * var(--16));
         outline: 1px solid var(--fg);
+        border-radius: 100%;
         @supports (mix-blend-mode: difference) {
           outline: 1px solid white;
         }
       }
     }
 
+    button#copyEmail.hideText {
+      color: transparent;
+    }
+
     #copyConfirmation {
+      display: none;
       position: absolute;
-      top: 0;
-      left: 0;
-      @include query($bp) {
-        right: 0;
-      }
+      top: 50%;
+      left: 0%;
+      width: 100%;
+      text-align: center;
+      transform: translate(0, -50%);
       @include transit(150ms);
-      opacity: 0;
-      transform: translate(4em, -3em);
     }

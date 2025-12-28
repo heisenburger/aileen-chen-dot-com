@@ -1,17 +1,20 @@
 async function copyText() {
-  const textContent = document.getElementById("email").textContent; // Get the text content
+  const copyButton = document.getElementById("copyEmail");
+  const textContent = document.getElementById("email").textContent; // Get the text content to copy
 
   try {
     await navigator.clipboard.writeText(textContent);
 
     // Show a success message
     const message = document.getElementById("copyConfirmation");
-    message.style.opacity = "1";
+    copyButton.classList.toggle("hideText");
+    message.style.display = "block";
 
-    // Hide the message after 1.5 seconds
+    // Hide the message after 2 seconds
     setTimeout(() => {
-      message.style.opacity = "0";
-    }, 1800);
+      copyButton.classList.toggle("hideText");
+      message.style.display = "none";
+    }, 2000);
 
   } catch (err) {
     // Alert the user if the copy action fails

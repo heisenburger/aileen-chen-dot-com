@@ -4,6 +4,10 @@ description: >-
   Aileen Chen is a photographer and stylist based in Aotearoa, New Zealand.  
 url: aileen-chen.com
 
+# for previewing on github pages
+# comment this out when deploying to actual domain
+baseurl: /aileen-chen-dot-com
+
 theme-color: white
 
 collections:

@@ -160,7 +160,6 @@ main {
       line-height: var(--28);
       &:hover {
         font-weight: 600;
-        cursor: url('/img/tri_blue.png'), auto;
         &::after {
           content: '↗︎';
           position: absolute;
@@ -182,7 +181,6 @@ main {
 
     button#copyEmail {
       @include reset-button;
-      cursor: url('/img/tri_blue.png'), auto;
       padding: var(--10);
       position: relative;
       &:hover::after {
@@ -195,9 +193,6 @@ main {
         left: calc(-1 * var(--16));
         border-radius: 100%;
         outline: 1px solid var(--fg);
-        // @supports (mix-blend-mode: difference) {
-        //   outline: 1px solid white;
-        // }
       }
     }
 

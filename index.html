@@ -1,17 +1,21 @@
 ---
 title: Aileen Chen
+samples:
+  - Natasha-Film-AC-14-X
+  - matan-2
+  - HARPER-TEST-AC-10
+  - DEEDEECOMET-TEST-22JUL-AC-14-X
+  - ELAENA-TEST-AC-19
+  - MIA-COLLECTION-9-AC-08
+  - PS-AW25-AC-29-X
+  - STUDIO-SUTRAM-AC-43
 ---
 
 <main>
   <section id="samples">
-    {% include img.html src="p1.jpeg" %}
-    {% include img.html src="p2.jpeg" %}
-    {% include img.html src="p3.jpeg" %}
-    {% include img.html src="p4.jpeg" %}
-    {% include img.html src="p5.jpg" %}
-    {% include img.html src="p6.png" %}
-    {% include img.html src="p7.png" %}
-    {% include img.html src="p8.png" %}
+    {% for imgfilename in page.samples %}
+      {% include img.html filename=imgfilename %}
+    {% endfor %}
   </section>
   <section id="text">
     <header>

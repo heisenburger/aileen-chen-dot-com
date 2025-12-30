@@ -1,10 +1,13 @@
+@use "mixins" as *;
+@use "vars" as *;
+
 // -------------
 // Img slideshow
 // -------------
 
 #samples {
-  --number-of-imgs: 8;
-  --seconds-per-img: 3s;
+  --number-of-imgs: #{$number-of-imgs};
+  --seconds-per-img: #{$seconds-per-img};
 }
 
   div.imgspace {
@@ -13,24 +16,23 @@
     animation: slide calc(var(--number-of-imgs) * var(--seconds-per-img)) infinite;
   }
 
-  div.imgspace:nth-child(1) { animation-delay: calc((1 - 1) * var(--seconds-per-img)); }
-  div.imgspace:nth-child(2) { animation-delay: calc((2 - 1) * var(--seconds-per-img)); }
-  div.imgspace:nth-child(3) { animation-delay: calc((3 - 1) * var(--seconds-per-img)); }
-  div.imgspace:nth-child(4) { animation-delay: calc((4 - 1) * var(--seconds-per-img)); }
-  div.imgspace:nth-child(5) { animation-delay: calc((5 - 1) * var(--seconds-per-img)); }
-  div.imgspace:nth-child(6) { animation-delay: calc((6 - 1) * var(--seconds-per-img)); }
-  div.imgspace:nth-child(7) { animation-delay: calc((7 - 1) * var(--seconds-per-img)); }
-  div.imgspace:nth-child(8) { animation-delay: calc((8 - 1) * var(--seconds-per-img)); }
+  @for $i from 1 through $number-of-imgs {
+    div.imgspace:nth-child(#{$i}) { animation-delay: calc((#{$i} - 1) * var(--seconds-per-img)); }
+  }
+
+$partial-percentage: calc(100% / $number-of-imgs);
+$second: calc( $partial-percentage / $seconds-per-img );
+$fadeout: $partial-percentage + 1%;
 
 @keyframes slide {
   // start invisible
   0% { opacity: 0; animation-timing-function: ease-in; }
   // fade in
-  0.1% { opacity: 1; }
-  // remain visible
-  12.5% { opacity: 1; animation-timing-function: ease-out; }
+  0.01% { opacity: 1; }
+  // remain visible for 1/number-of-imgs of the time
+  #{$partial-percentage} { opacity: 1; animation-timing-function: ease-out; }
   // fade out
-  18.75% { opacity: 0; }
+  #{$fadeout} { opacity: 0; }
   // end invisible
   100% { opacity: 0; }
 }

@@ -8,7 +8,7 @@ main {
 }
 
 @mixin wonk {
-  transform: rotate(-0.5deg);
+  rotate: -0.5deg;
 }
 
 #samples, #text {
@@ -46,7 +46,7 @@ main {
       padding-bottom: var(--72);
       padding-left: var(--48);
       padding-right: var(--48);
-      transform: translateY(-2dvh);
+      translate: 0 -2dvh;
     }
     // drop shadow
     box-shadow: var(--drop);
@@ -55,14 +55,8 @@ main {
     @include center-all;
   }
 
-  div.imgspace:nth-child(1) { transform: rotate(0.8deg); }
-  div.imgspace:nth-child(2) { transform: rotate(-0.5deg); }
-  div.imgspace:nth-child(3) { transform: rotate(0.6deg); }
-  div.imgspace:nth-child(4) { transform: rotate(-0.4deg); }
-  div.imgspace:nth-child(5) { transform: rotate(0.9deg); }
-  div.imgspace:nth-child(6) { transform: rotate(-0.4deg); }
-  div.imgspace:nth-child(7) { transform: rotate(0.3deg); }
-  div.imgspace:nth-child(8) { transform: rotate(-0.5deg); }
+  div.imgspace:nth-child(odd) { rotate: (0.8deg); }
+  div.imgspace:nth-child(even) { rotate: (-0.8deg); }
 
     div.imgwrap {
       position: relative;

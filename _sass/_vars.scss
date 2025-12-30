@@ -62,5 +62,11 @@
   :root {
     --ff-sans: "Helvetica", "Helvetica Neue", "Inter", "Arial", sans-serif;
     --ff-mono: "Sono", "Courier Prime Sans", "Roboto Mono", monospace;
-    --ff-serif: "New York", "Adobe Garamond Pro", "Adobe Garamond", "EB Garamond", Garamond, serif;
   }
+
+// -------------
+// Sample images
+// -------------
+
+$number-of-imgs: 8;
+$seconds-per-img: 3.5s;

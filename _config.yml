@@ -5,9 +5,9 @@ description: >-
 
 # for previewing on github pages
 # comment this out when deploying to actual domain
-url: heisenburger.github.io
-baseurl: /aileen-chen-dot-com
-# url: aileen-chen.com
+# url: heisenburger.github.io
+# baseurl: /aileen-chen-dot-com
+url: aileen-chen.com
 
 theme-color: white
 

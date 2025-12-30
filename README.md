@@ -6,4 +6,4 @@ Todos
 - [x] Create text space
 - [x] Make images slideshow
 - [x] (opt) copy email address
-- [ ] update placeholder images
+- [x] update placeholder images

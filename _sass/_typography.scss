@@ -2,10 +2,10 @@
 @use "vars" as *;
 
 main {
-  font-family: var(--ff-mono);
-  font-size: var(--12);
+  font-family: var(--ff-sans);
+  font-size: var(--10);
   text-transform: uppercase;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.3em;
 }
 
 #services, #links {
@@ -13,27 +13,23 @@ main {
 }
 
 header {
-  letter-spacing: 0.3em;
+  font-size: var(--12);
 }
 
   h1 {
-    font-size: var(--12);
-    font-family: var(--ff-sans);
+    font-weight: 800;
+    font-size: inherit;
   }
 
   #services {
     font-weight: 500;
-    letter-spacing: 0.5em;
   }
 
 #links {
-  font-size: var(--10);
-  font-weight: 300;
 }
 
 footer {
   font-weight: 400;
-  font-size: var(--10);
   @include query($bp) {
     text-align: right;
   }
@@ -45,12 +41,10 @@ footer {
     text-transform: inherit;
     font-size: inherit;
     font-family: inherit;
+    line-height: 3ch;
   }
 
-  #email {
-    font-weight: 600;
-    letter-spacing: 0.5em;
-  }
   span.sans {
     font-family: var(--ff-sans);
+    font-weight: 600;
   }

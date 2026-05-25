@@ -6,9 +6,8 @@ pdf: "Terms and Conditions of Photographic Engagement v2026.pdf"
 {% assign pdflink = page.pdf | replace: " ", "%20" %}
 
 <style>
-  object {
-    height: 100dvh;
-  }
+  body: { margin: 0 }
+  object { height: 100dvh }
 </style>
 
 <object data="/{{ pdflink }}" width="100%" height="800px" type="application/pdf">

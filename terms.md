@@ -1,5 +1,6 @@
 ---
 permalink: /terms/
+layout: blank
 pdf: "Terms and Conditions of Photographic Engagement v2026.pdf"
 ---
 
@@ -9,6 +10,10 @@ pdf: "Terms and Conditions of Photographic Engagement v2026.pdf"
   body: { margin: 0 }
   object { height: 100dvh }
 </style>
+
+if(!PDFObject.supportsPDFs){
+  console.log("Boo, inline PDFs are not supported by this browser");
+}
 
 <object data="/{{ pdflink }}" width="100%" height="800px" type="application/pdf">
   <p>Your browser does not support PDFs. <a href="/{{ pdflink }}">Download the PDF instead.</a></p>

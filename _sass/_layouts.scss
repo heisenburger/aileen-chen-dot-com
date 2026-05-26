@@ -160,10 +160,13 @@ main {
       line-height: var(--28);
       &:hover {
         &::after {
-          content: '↗︎';
+          content: '☺︎';
           position: absolute;
-          font-size: var(--14);
+          font-size: var(--20);
           font-family: var(--ff-mono);
+          font-wight: 200;
+          margin-top: 0.5px;
+          padding-left: 3px;
         }
       }
     }
@@ -186,11 +189,11 @@ main {
         position: absolute;
         width: 100%;
         height: 100%;
-        padding: var(--14) var(--24) var(--20);
+        padding: var(--14) var(--20) var(--20);
         top: calc(-1 * var(--16));
-        left: calc(-1 * var(--16));
+        left: calc(-1 * var(--20));
         border-radius: 100%;
-        outline: 1px solid var(--fg);
+        outline: 0.75px solid var(--fg);
       }
     }
 

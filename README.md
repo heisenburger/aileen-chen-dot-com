@@ -13,7 +13,7 @@ For Aileen :)
 ### Changing the photos
 
 1. Upload files to the `/img/` folder of the repository [here](https://github.com/heisenburger/aileen-chen-dot-com/upload/main/img). When you're done, add a description if you'd like and click the "Commit changes" button.
-2. Open up [`index.html`](https://github.com/heisenburger/aileen-chen-dot-com/blob/main/index.html). At the top of the file you will see a list of samples, like so:
+2. Open up [`index.html`](https://github.com/heisenburger/aileen-chen-dot-com/edit/main/index.html). At the top of the file you will see a list of samples, like so:
   
   ```
   samples: 
@@ -32,6 +32,8 @@ For Aileen :)
   This is the list of photos displayed in the carousel, and the order they are displayed in. Note that these should match the filename of the images, except for the `.jpg`.
 
   To change the photos, delete, add, or reorder the image filenames as you wish. Make sure they match the filename exactly, including whether letters are uppercase or lowercase.
+
+  Click the green "Commit changes" button on the top right of the page when you're done.
 
 3. Now count the number of images you have. [Edit the variables file here](https://github.com/heisenburger/aileen-chen-dot-com/edit/main/_sass/_vars.scss). At the bottom of this file you will see `$number-of-imgs:` — update the number here to the current number of images you have. You can also update the `$seconds-per-img:` variable if you want. Once you're done, hit the "Commit changes" button at the top right of the page.
 
